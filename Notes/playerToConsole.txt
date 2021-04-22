@@ -1,0 +1,17 @@
+player controller shoots raycast
+check look at interactible
+interact
+possessible?
+return to player
+player hooks in
+game manager moves controller to turret?
+or player controller sends inputs to turret and turret move and player camera is moved to turret
+game manager?
+
+simple, no game manager
+local - system handles all inputs, funnels to any objects
+central player controller...
+
+
+but for networking... 
+direct piping?

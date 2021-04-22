@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 13950d759cdcfb44e868af7d9a858c61
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerNameText: {instanceID: 0}
+  - floatingInfo: {instanceID: 0}
+  - sceneScript: {fileID: 5002371446895979526, guid: 089fd11e70185d34089b3a169964090f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7075f21a3e5a17744882fc446e5f1819, type: 3}
+  m_Name: UIConfig
+  m_EditorClassIdentifier: 
+  colorPalette:
+    Primary: {r: 0.25882354, g: 0.25882354, b: 0.25882354, a: 1}
+    PrimaryLight: {r: 0.42745098, g: 0.42745098, b: 0.42745098, a: 1}
+    PrimaryDark: {r: 0.105882354, g: 0.105882354, b: 0.105882354, a: 1}
+    PrimaryText: {r: 1, g: 1, b: 1, a: 1}
+    Secondary: {r: 0.5019608, g: 0.79607844, b: 0.76862746, a: 1}
+    SecondaryLight: {r: 0.69803923, g: 0.99607843, b: 0.96862745, a: 1}
+    SecondaryDark: {r: 0.30980393, g: 0.6039216, b: 0.5803922, a: 1}
+    SecondaryText: {r: 0, g: 0, b: 0, a: 1}
+    Background: {r: 0.88235295, g: 0.8862745, b: 0.88235295, a: 1}
+    LightBackground: {r: 0.9607843, g: 0.9607843, b: 0.9647059, a: 1}
+  titleFont: {fileID: 11400000, guid: 6dfd45764150cac4db60bd4b794230ba, type: 2}
+  bodyFont: {fileID: 11400000, guid: a8cf605568744d04f94248c886200cb5, type: 2}
+  buttonColors:
+    Default:
+      m_NormalColor: {r: 0.5019608, g: 0.79607844, b: 0.76862746, a: 1}
+      m_HighlightedColor: {r: 0.4767391, g: 0.7560784, b: 0.73000675, a: 1}
+      m_PressedColor: {r: 0.36324158, g: 0.5760784, b: 0.5562137, a: 1}
+      m_SelectedColor: {r: 0.4767391, g: 0.7560784, b: 0.73000675, a: 1}
+      m_DisabledColor: {r: 0.48997882, g: 0.5760784, b: 0.56804246, a: 0.5}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    Light:
+      m_NormalColor: {r: 0.69803923, g: 0.99607843, b: 0.96862745, a: 1}
+      m_HighlightedColor: {r: 0.6700077, g: 0.9560784, b: 0.9297298, a: 1}
+      m_PressedColor: {r: 0.54386604, g: 0.77607846, b: 0.7546905, a: 1}
+      m_SelectedColor: {r: 0.6700077, g: 0.9560784, b: 0.9297298, a: 1}
+      m_DisabledColor: {r: 0.7146033, g: 0.77607846, b: 0.77041626, a: 0.5}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    Dark:
+      m_NormalColor: {r: 0.30980393, g: 0.6039216, b: 0.5803922, a: 1}
+      m_HighlightedColor: {r: 0.28928444, g: 0.5639216, b: 0.54195064, a: 1}
+      m_PressedColor: {r: 0.1969468, g: 0.3839216, b: 0.36896363, a: 1}
+      m_SelectedColor: {r: 0.28928444, g: 0.5639216, b: 0.54195064, a: 1}
+      m_DisabledColor: {r: 0.28140953, g: 0.3839216, b: 0.37572065, a: 0.5}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    Background:
+      m_NormalColor: {r: 0.88235295, g: 0.8862745, b: 0.88235295, a: 1}
+      m_HighlightedColor: {r: 0.8425299, g: 0.8462745, b: 0.8425299, a: 1}
+      m_PressedColor: {r: 0.66332644, g: 0.66627455, b: 0.66332644, a: 1}
+      m_SelectedColor: {r: 0.8425299, g: 0.8462745, b: 0.8425299, a: 1}
+      m_DisabledColor: {r: 0.80990684, g: 0.66627455, b: 0.80990684, a: 0.5}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1

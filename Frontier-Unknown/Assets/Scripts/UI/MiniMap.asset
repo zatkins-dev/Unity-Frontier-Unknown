@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf812a27e27f9cd41b45298fd531fd88, type: 3}
+  m_Name: MiniMap
+  m_EditorClassIdentifier: 
+  debug: 0
+  zoom: 0.25
+  shader: {fileID: 7200000, guid: 9b9e1c2b51dc7314cb5572cb4ff05de5, type: 3}
+  mapSize: {x: 1000, y: 1000}
+  background: {r: 0, g: 0, b: 0, a: 127}
+  scale: 16
+  res: {x: 512, y: 512}
+  borderWidthRel: 5.9
+  TeamColors:
+  - {r: 0.127759, g: 0.6148402, b: 0.8207547, a: 1}
+  - {r: 0.5743412, g: 0.23216473, b: 0.99215686, a: 1}
+  - {r: 0.93333334, g: 0.22493333, b: 0.61187476, a: 1}
+  - {r: 0.23696156, g: 0.6698113, b: 0.43569598, a: 1}

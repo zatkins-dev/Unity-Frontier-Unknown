@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2236222062941995677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6397828492574409102}
+  - component: {fileID: 3735539012076546173}
+  - component: {fileID: 471475268670843948}
+  m_Layer: 0
+  m_Name: NetworkRoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6397828492574409102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236222062941995677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.490673, y: 416.84424, z: 1.0657425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3735539012076546173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236222062941995677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bf05ac55488e54b8a589d8ad36e70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  autoStartServerBuild: 1
+  showDebugMessages: 1
+  serverTickRate: 30
+  serverBatching: 0
+  serverBatchInterval: 0
+  offlineScene: Assets/Scenes/Networking/Menu.unity
+  onlineScene: Assets/Scenes/Networking/NetworkLobby.unity
+  transport: {fileID: 471475268670843948}
+  networkAddress: localhost
+  maxConnections: 8
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 4350187791964429482, guid: 686627275d26f814fa17eac9521a1a9a, type: 3}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 1
+  spawnPrefabs:
+  - {fileID: 291227412564432225, guid: 63a5863eb73ea554a8e8e513403f8771, type: 3}
+  - {fileID: 8013682034382087033, guid: df0d60a7f4b9d6d44808f01987a0f0b1, type: 3}
+  - {fileID: 916808785477833960, guid: eb8cebfc5d9172c44a39f1457cb1c94a, type: 3}
+  - {fileID: 3669388971280194899, guid: bfbf8cd02ad86074eb8876f635ec26a6, type: 3}
+  showRoomGUI: 0
+  minPlayers: 1
+  roomPlayerPrefab: {fileID: 5959061327527503840, guid: 163d71b4007774948809f82f419b8215, type: 3}
+  RoomScene: Assets/Scenes/Networking/NetworkLobby.unity
+  GameplayScene: Assets/Scenes/Demo.unity
+  _allPlayersReady: 0
+  roomSlots: []
+  clientIndex: 0
+  PlayerListItemPrefab: {fileID: 3669388971280194899, guid: bfbf8cd02ad86074eb8876f635ec26a6, type: 3}
+  MinimapReference: {fileID: 11400000, guid: 2783a4de3d218554ba5bafe496b12ef6, type: 2}
+  MapName: 
+  _hostButton: {fileID: 0}
+  _mapNameText: {fileID: 0}
+  Teams:
+  - Ships: []
+    Tickets: 1000
+  - Ships: []
+    Tickets: 1000
+  - Ships: []
+    Tickets: 1000
+  - Ships: []
+    Tickets: 1000
+--- !u!114 &471475268670843948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236222062941995677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7777
+  NoDelay: 1
+  SendTimeout: 5000
+  ReceiveTimeout: 30000
+  serverMaxMessageSize: 16384
+  serverMaxReceivesPerTick: 10000
+  serverSendQueueLimitPerConnection: 10000
+  serverReceiveQueueLimitPerConnection: 10000
+  clientMaxMessageSize: 16384
+  clientMaxReceivesPerTick: 1000
+  clientSendQueueLimit: 10000
+  clientReceiveQueueLimit: 10000

@@ -1,0 +1,78 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel MiniMap
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+int res_x;
+int res_y;
+
+struct ShipData {
+    float3 pos;
+    float4 color;
+};
+StructuredBuffer<ShipData> Ships;
+int numShips;
+
+float3 center;
+matrix rotation;
+float zoom;
+float scale;
+float border_width_rel = 20;
+
+float3 world_to_local(float3 p) {
+    float4 localPos = mul(rotation, float4(p - center, 0.f) * zoom) + float4(res_y, 0.f, res_x, 1.f) / 2.0f;
+    return localPos.xyz; // / localPos.w;
+}
+
+float computeAlpha(float dist) {
+    return exp(-dist / (10.0f / zoom));
+}
+
+[numthreads(32,32,1)]
+void MiniMap(uint3 id : SV_DispatchThreadID)
+{
+    float dist_from_center = distance(id.xy, float2(res_x, res_y)/2.f);
+    float border_width = res_x * 0.005 * border_width_rel;
+    float radius_interior = (res_x) / 2.0f - border_width;
+    float radius_exterior = (res_x) / 2.0f;
+    if (dist_from_center > radius_exterior) { return; }
+    if (dist_from_center > radius_interior)
+    {
+        float t = (dist_from_center - radius_interior) / (radius_exterior - radius_interior);
+        float3 rgb = float3(0.698f, 0.996f, 0.968) - 0.5*((1 - t) * (1 - t) * float3(0.7, 0.7, 0.7) - (1 - t) * t * float3(0.2, 0.2, 0.2) + t * t * float3(0.5, 0.5, 0.5));
+        Result[id.xy] = float4(rgb, 1);
+        // if (t <= 0.50 && t >= 0.40)
+        // {
+        //     Result[id.xy] = (Result[id.xy]*float4(1.f, 0.843f, 0.f, 1.f), 0, 1);
+        //     return;
+        // }
+        // return;
+        // Result[id.xy] = float4(1.0f, 0.0f, 0.0f, 1.0);
+		return;
+	}
+    Result[id.xy] = float4(0.5f, 0.5f, 0.5f, 0.3f);
+    float minDist;
+    bool shipFound = false;
+    for (int i = 0; i < numShips; i++)
+    {
+        float3 ship_pos = world_to_local(Ships[i].pos);
+        float dist = distance(ship_pos.xz, id.xy);
+        if (dist > scale) { continue; }
+        float world_space_dist = distance(Ships[i].pos, center);
+        if (!shipFound) {
+            shipFound = true;
+        }
+        else if (world_space_dist > minDist){
+            return;
+        }
+        minDist = world_space_dist;
+        Result[id.xy] = float4(Ships[i].color.rgb, computeAlpha(dist));
+    }
+
+	if (dist_from_center )
+
+    if (dist_from_center < scale) {
+        Result[id.xy] = float4(1.f, 1.f, 1.f, computeAlpha(dist_from_center / 2.f));
+    }
+}
